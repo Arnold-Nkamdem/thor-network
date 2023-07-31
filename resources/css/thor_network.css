@@ -154,7 +154,7 @@ main .container .left {
 }
 
 main .container .left .profile {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     padding: var(--card-padding);
     background: var(--color-white);
     border-radius: var(--card-border-radius);
@@ -236,7 +236,7 @@ main .container .left .profile {
 
 /* == Créer une publication == */
 .middle .addPost {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .middle .addPost .profile-photo {
@@ -349,6 +349,7 @@ main .container .left .profile {
 }
 
 .middle .liked-by {
+    margin-top: 0.5rem;
     display: flex;
 }
 
@@ -372,7 +373,7 @@ main .container .left .profile {
 
 /* === Droite == */
 main .container .right {
-    margin-top: 2rem;
+    margin-top: 1rem;
     height: max-content;
     position: sticky;
     top: var(--sticky-top-right);

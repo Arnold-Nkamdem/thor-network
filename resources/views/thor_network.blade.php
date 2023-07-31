@@ -148,8 +148,8 @@
                             </div>
 
                             <!-- Show comments -->
-                            @if (isset($comments))
-                                @foreach($comments as $comment)
+                            @foreach($comments as $comment)
+                                @if (isset($comment) && ($comment->post_id == $post->id))
                                     <div class="row mb-2 d-flex justify-content-between">
                                         <div class="col-auto text-start"></div>
                                         <div class="col-auto w-80 p-1 me-3 text-end rounded-4 show-comment">
@@ -210,8 +210,8 @@
                                             @include('modals.network.changeCommentStatus')
                                         </div>
                                     </div>
-                                @endforeach
-                            @endif
+                                @endif
+                            @endforeach
 
                             <div class="liked-by">
                                 <span><img src="./images/profile-10.jpg"></span>
@@ -254,8 +254,8 @@
                             </div>
 
                             <!-- Show comments -->
-                            @if (isset($comments))
-                                @foreach($comments as $comment)
+                            @foreach($comments as $comment)
+                                @if (isset($comment) && ($comment->post_id == $post->id))
                                     <div class="row mb-2 d-flex justify-content-between">
                                         <div class="col-auto text-start"></div>
                                         <div class="col-auto w-80 p-1 me-3 text-end rounded-4 show-comment">
@@ -316,8 +316,8 @@
                                             @include('modals.network.changeCommentStatus')
                                         </div>
                                     </div>
-                                @endforeach
-                            @endif
+                                @endif
+                            @endforeach
 
                             <div class="liked-by">
                                 <span><img src="./images/profile-10.jpg"></span>
@@ -360,8 +360,8 @@
                             </div>
 
                             <!-- Show comments -->
-                            @if (isset($comments))
-                                @foreach($comments as $comment)
+                            @foreach($comments as $comment)
+                                @if (isset($comment) && ($comment->post_id == $post->id))
                                     <div class="row mb-2 d-flex justify-content-between">
                                         <div class="col-auto text-start"></div>
                                         <div class="col-auto w-80 p-1 me-3 text-end rounded-4 show-comment">
@@ -422,8 +422,8 @@
                                             @include('modals.network.changeCommentStatus')
                                         </div>
                                     </div>
-                                @endforeach
-                            @endif
+                                @endif
+                            @endforeach
 
                             <div class="liked-by">
                                 <span><img src="./images/profile-10.jpg"></span>
