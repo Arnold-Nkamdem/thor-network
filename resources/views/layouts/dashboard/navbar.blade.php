@@ -10,7 +10,7 @@
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item dropdown d-flex align-items-center">
                     <a href="#" class="nav-link text-white font-weight-bold px-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}" class="avatar rounded-circle avatar-sm me-sm-1" alt="{{ Auth::user()->first_name }}-profile_photo">
+                        <img src="{{ (Auth::user()->profile_photo_path !== null) ? Storage::url(Auth::user()->profile_photo_path) : './images/user_circle.svg'  }}" class="avatar rounded-circle avatar-sm me-sm-1" alt="{{ Auth::user()->first_name }}-profile_photo">
                         <span class="d-sm-inline d-none me-3">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
                     </a>
                     <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">

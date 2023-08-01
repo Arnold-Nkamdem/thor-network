@@ -79,7 +79,7 @@
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Storage::url(Auth::user()->profile_photo_path) }}" alt="{{ Auth::user()->first_name }}" />
+                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ (Auth::user()->profile_photo_path !== null) ? Storage::url(Auth::user()->profile_photo_path) : './images/user_circle.svg'  }}" alt="{{ Auth::user()->first_name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
@@ -151,7 +151,7 @@
             <div class="flex items-center px-4">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div class="shrink-0 mr-3">
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Storage::url(Auth::user()->profile_photo_path) }}" alt="{{ Auth::user()->first_name }}" />
+                        <img class="h-10 w-10 rounded-full object-cover" src="{{ (Auth::user()->profile_photo_path !== null) ? Storage::url(Auth::user()->profile_photo_path) : './images/user_circle.svg'  }}" alt="{{ Auth::user()->first_name }}" />
                     </div>
                 @endif
 

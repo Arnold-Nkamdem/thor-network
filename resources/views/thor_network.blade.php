@@ -12,7 +12,7 @@
         <div class="left">
             <a class="profile">
                 <div class="profile-photo">
-                    <img class="h-15 w-15 rounded-full object-cover" src="{{ Storage::url(Auth::user()->profile_photo_path) }}" alt="{{ Auth::user()->fisrt_name }}" />
+                    <img class="h-15 w-15 rounded-full object-cover" src="{{ (Auth::user()->profile_photo_path !== null) ? Storage::url(Auth::user()->profile_photo_path) : './images/user_circle.svg'  }}" alt="{{ Auth::user()->fisrt_name }}" />
                 </div>
                 <div class="handle">
                     <h4>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h4>
@@ -51,7 +51,7 @@
 
             <div class="addPost flex justify-around">
                 <div class="profile-photo">
-                    <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}">
+                    <img src="{{ (Auth::user()->profile_photo_path !== null) ? Storage::url(Auth::user()->profile_photo_path) : './images/user_circle.svg'  }}">
                 </div>
 
                 <a href="#createPost" class="create-post" data-bs-toggle="modal">
@@ -67,7 +67,7 @@
                         <div class="head">
                             <div class="user">
                                 <div class="profile-photo">
-                                    <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}" alt="{{ Auth::user()->first_name }}">
+                                    <img src="{{ (Auth::user()->profile_photo_path !== null) ? Storage::url(Auth::user()->profile_photo_path) : './images/user_circle.svg'  }}" alt="{{ Auth::user()->first_name }}">
                                 </div>
                                 <div class="info">
                                     <h3>
@@ -156,7 +156,7 @@
                                             @foreach($users as $user)
                                                 @if(($post->id == $comment->post_id) && ($user->id == $comment->user_id))
                                                     <span>
-                                                        <img src="{{ Storage::url($user->profile_photo_path) }}">
+                                                        <img src="{{ ($user->profile_photo_path !== null) ? Storage::url($user->profile_photo_path) : './images/user_circle.svg'  }}">
                                                     </span>
 
                                                     <p class="text-sm comment">{{ $comment->comment }}</p>
@@ -262,7 +262,7 @@
                                             @foreach($users as $user)
                                                 @if(($post->id == $comment->post_id) && ($user->id == $comment->user_id))
                                                     <span>
-                                                        <img src="{{ Storage::url($user->profile_photo_path) }}">
+                                                        <img src="{{ ($user->profile_photo_path !== null) ? Storage::url($user->profile_photo_path) : './images/user_circle.svg'  }}">
                                                     </span>
 
                                                     <p class="text-sm comment">{{ $comment->comment }}</p>
@@ -368,7 +368,7 @@
                                             @foreach($users as $user)
                                                 @if(($post->id == $comment->post_id) && ($user->id == $comment->user_id))
                                                     <span>
-                                                        <img src="{{ Storage::url($user->profile_photo_path) }}">
+                                                        <img src="{{ ($user->profile_photo_path !== null) ? Storage::url($user->profile_photo_path) : './images/user_circle.svg'  }}">
                                                     </span>
 
                                                     <p class="text-sm comment">{{ $comment->comment }}</p>
